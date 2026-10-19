@@ -1,334 +1,1422 @@
 <!DOCTYPE html>
 <html lang="ms">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Signature PrimeCare Dental Clinic – Avenue K, Kuala Lumpur</title>
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f5f1e8;--sand:#e4dbcb;--ink:#26291f;--mute:#6b6a5e;--sage:#8a9479;--sage-l:#c9cfba;--dark:#363b31;--line:#d6ccba;--hh:68px}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:400 15px/1.7 Inter,system-ui,sans-serif}
-h1,h2,h3{font-family:Newsreader,Georgia,serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
-h1{font-size:clamp(42px,7vw,78px)}h2{font-size:clamp(30px,4vw,44px)}h3{font-size:24px}
-a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-header{position:sticky;top:0;z-index:20;background:rgba(245,241,232,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
-nav{display:flex;align-items:center;justify-content:space-between;height:var(--hh)}
-.logo{font:500 20px Newsreader,serif;letter-spacing:.04em;text-decoration:none}
-.logo small{display:block;font:400 10px Inter;letter-spacing:.14em;color:var(--mute);margin-top:-2px}
-.links{display:flex;gap:26px;align-items:center;font-size:14px}
-.links a{text-decoration:none;color:var(--mute)}
-.links a.on,.links a:hover{color:var(--ink)}
-.btn{display:inline-block;background:var(--sage);color:#fff!important;padding:13px 24px;border:0;border-radius:2px;font:500 14px Inter;text-decoration:none;cursor:pointer}
-.btn:hover{background:#778268}.btn.dk{background:var(--dark)}.btn.lt{background:#f5f1e8;color:var(--ink)!important}
-.ul{font-size:14px;border-bottom:1px solid currentColor;padding-bottom:2px;text-decoration:none}
-.burger{display:none;background:none;border:0;font-size:26px;cursor:pointer}
-.page{display:none}.page.show{display:block}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Signature PrimeCare Dental Clinic – Avenue K, Kuala Lumpur</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --sand: #e4dbcb;
+      --ink: #26291f;
+      --mute: #6b6a5e;
+      --sage: #8a9479;
+      --sage-l: #c9cfba;
+      --dark: #363b31;
+      --line: #d6ccba;
+      --hh: 68px
+    }
 
-/* background images */
-[data-bg]{background-size:cover;background-position:center;background-color:#4b5043}
-.full{position:relative;display:flex;align-items:flex-end;color:#fff;min-height:calc(100vh - var(--hh));min-height:calc(100svh - var(--hh) - env(safe-area-inset-top,0px))}
-.full::before,.shade::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,27,20,.25) 0%,rgba(24,27,20,.72) 100%)}
-.full .wrap{position:relative;padding-top:60px;padding-bottom:72px;width:100%}
-.full p{max-width:480px;margin:20px 0 30px;color:#ece8dc;font-size:16.5px}
-.full h1{max-width:760px}
-.shade{position:relative;color:#fff}
-.shade>*{position:relative}
-.sec{padding:84px 0}
-.intro{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.intro p{color:var(--mute);margin-top:14px}
-.im{width:100%;object-fit:cover;display:block;background:var(--sage-l)}
-.im.t{aspect-ratio:4/3}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:60px;border-top:1px solid var(--line)}
-.facts div{padding:26px 24px 0 0}.facts div+div{padding-left:24px;border-left:1px solid var(--line)}
-.facts h3{font-size:22px;margin-bottom:6px}.facts p{color:var(--mute);font-size:14px}
-.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:36px}
-.cat{position:relative;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;color:#fff;text-decoration:none;overflow:hidden}
-.cat::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,27,20,0) 30%,rgba(24,27,20,.85));transition:.3s}
-.cat:hover::before{background:linear-gradient(180deg,rgba(24,27,20,.1),rgba(24,27,20,.92))}
-.cat>*{position:relative}.cat h3{font-size:22px}.cat span{font-size:13px;color:#e4e0d3}
-.cta{min-height:460px;display:flex;align-items:center}
-.cta::before{content:"";position:absolute;inset:0;background:rgba(30,34,26,.62)}
-.cta .wrap{position:relative}.cta p{max-width:520px;margin:16px 0 26px;color:#ece8dc}
-.pay{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.pay>div{background:var(--bg);color:var(--ink);padding:36px 32px}
-.pay h3{font-size:22px;margin-bottom:8px}.pay p{color:var(--mute);font-size:14.5px}
-.payw{padding:90px 0}
-.payw::before{content:"";position:absolute;inset:0;background:rgba(30,34,26,.5)}
-.payw h2{margin-bottom:30px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;margin-bottom:0}
-.row .im{height:100%;min-height:420px}
-.row .tx{padding:56px 52px;display:flex;flex-direction:column;justify-content:center}
-.row:nth-child(even) .im{order:2}
-.row:nth-child(even){background:var(--sand)}
-.row ul{list-style:none;padding:0;margin:18px 0 0}
-.row li{padding:8px 0;border-bottom:1px solid var(--line);font-size:14.5px}.row li:last-child{border:0}
-.book{display:grid;grid-template-columns:340px 1fr;max-width:860px;margin:-60px auto 90px;position:relative;z-index:2;border:1px solid var(--line);background:#faf7f0;box-shadow:0 18px 50px rgba(30,34,26,.18)}
-.cal{padding:28px;border-right:1px solid var(--line)}
-.cal-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-family:Newsreader,serif;font-size:20px}
-.cal-h button{background:none;border:0;font-size:20px;cursor:pointer;padding:4px 10px}
-.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;font-size:13px}
-.grid b{font-weight:400;color:var(--mute);font-size:11px;padding:4px 0}
-.grid button{aspect-ratio:1;border:0;background:none;border-radius:50%;cursor:pointer;font:inherit;color:var(--ink)}
-.grid button:hover:not(:disabled){background:var(--sand)}.grid button:disabled{color:#bdb6a6;cursor:default}
-.grid button.sel{background:var(--sage);color:#fff}
-.form{padding:28px;display:flex;flex-direction:column;gap:16px}
-label{font-size:13px;color:var(--mute);display:block;margin-bottom:6px}
-select,input{width:100%;padding:11px 12px;border:1px solid var(--line);background:#fff;font:inherit;border-radius:2px;color:var(--ink)}
-.times{display:flex;flex-wrap:wrap;gap:8px}
-.times button{padding:9px 14px;border:1px solid var(--line);background:#fff;font:inherit;font-size:13px;cursor:pointer;border-radius:2px}
-.times button.sel{background:var(--sage);color:#fff;border-color:var(--sage)}
-.note{font-size:12.5px;color:var(--mute)}.err{color:#9a3b2b;font-size:13px;min-height:18px}
-.ok{padding:60px 28px;text-align:center;grid-column:1/-1}
-.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:0}
-.contact .info{padding:64px 52px 64px max(28px,calc((100vw - 1120px)/2 + 28px))}
-dl{display:grid;grid-template-columns:130px 1fr;gap:14px 16px;margin-top:24px;font-size:14.5px}
-dt{color:var(--mute)}dd{margin:0}
-.map{border:0;width:100%;height:100%;min-height:520px;display:block;filter:saturate(.8)}
-footer{background:var(--dark);color:#d9d6c9;padding:56px 0 30px}
-.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
-footer h4{font:500 17px Newsreader,serif;color:#fff;margin-bottom:10px}
-footer a{display:block;text-decoration:none;color:#b9b6a8;font-size:14px;padding:3px 0}footer a:hover{color:#fff}
-footer p{font-size:14px;color:#b9b6a8}
-.copy{border-top:1px solid #4d5246;margin-top:36px;padding-top:18px;font-size:12.5px;color:#8f8c7f}
-:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
-@media(max-width:860px){
-.links{position:absolute;top:calc(var(--hh) + env(safe-area-inset-top,0px));left:0;right:0;background:var(--bg);flex-direction:column;align-items:flex-start;padding:18px 28px;gap:16px;border-bottom:1px solid var(--line);display:none}
-.links.open{display:flex}.burger{display:block}
-.intro,.row,.contact,.pay{grid-template-columns:1fr}
-.intro{gap:30px}.row .im{min-height:260px}.row:nth-child(even) .im{order:0}.row .tx{padding:36px 28px}
-.cats{grid-template-columns:1fr 1fr}.cat{min-height:240px}.cat:last-child{grid-column:1/-1}
-.facts{grid-template-columns:1fr}.facts div+div{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:20px}
-.book{grid-template-columns:1fr;margin-inline:16px}.cal{border-right:0;border-bottom:1px solid var(--line)}
-.contact .info{padding:44px 28px}.map{min-height:380px}.fg{grid-template-columns:1fr 1fr}
-}
-.links a.btn{padding:12px 24px;line-height:1.2;white-space:nowrap;border-radius:2px;color:#fff;text-align:center}
-@media(max-width:860px){.links a.btn{width:auto;margin-top:4px}}
-/* ---- responsive hardening ---- */
-html{-webkit-text-size-adjust:100%}
-body{overflow-x:hidden}
-img,iframe{max-width:100%}
-.wrap{padding-left:max(28px,env(safe-area-inset-left));padding-right:max(28px,env(safe-area-inset-right))}
-.burger{min-width:44px;min-height:44px}
-select,input{font-size:16px;min-height:44px}
-.times button,.btn{min-height:44px}
-.links a{padding:4px 0}
-dd{overflow-wrap:anywhere}
-/* large screens */
-@media(min-width:1600px){.wrap{max-width:1280px}body{font-size:16px}.contact .info{padding-left:max(28px,calc((100vw - 1280px)/2 + 28px))}}
-/* laptop / tablet landscape */
-@media(max-width:1100px){
-.cats{grid-template-columns:repeat(3,1fr)}.cat{min-height:300px}.cat:nth-child(n+4){grid-column:span 1}
-.row .tx{padding:44px 36px}.fg{grid-template-columns:1fr 1fr 1fr}.fg>div:first-child{grid-column:1/-1}
-.contact .info{padding-right:32px}
-}
-/* tablet portrait */
-@media(max-width:860px){
-.cats{grid-template-columns:1fr 1fr}.cat:last-child{grid-column:1/-1}
-.pay{gap:0}.payw{padding:64px 0}.sec{padding:60px 0}
-.book{margin-top:-40px}
-.full .wrap{padding-bottom:56px}
-.fg>div:first-child{grid-column:1/-1}
-.links a{padding:6px 0;width:100%}.links a.btn{width:auto}
-}
-/* phones */
-@media(max-width:600px){
-:root{--hh:60px}
-.wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
-h1{font-size:clamp(36px,11vw,48px)}h2{font-size:clamp(26px,8vw,34px)}h3{font-size:21px}
-.full p{font-size:15.5px}.full .btn{width:100%;text-align:center}
-.cats{grid-template-columns:1fr}.cat{min-height:200px}
-.cat:last-child{grid-column:auto}
-.facts h3{font-size:20px}
-.row .im{min-height:220px;aspect-ratio:16/10}.row .tx{padding:30px 20px}
-.cal,.form{padding:20px}.book{margin-inline:12px}
-.grid{gap:2px}.grid button{font-size:12.5px;min-height:38px}
-.times button{flex:1 0 30%}
-dl{grid-template-columns:1fr;gap:2px 0}dt{margin-top:12px;font-size:13px}
-.contact .info{padding:36px 20px}.contact .btn{display:block;text-align:center}.contact .ul{display:inline-block;margin:16px 0 0!important}
-.map{min-height:320px}
-.fg{grid-template-columns:1fr 1fr;gap:24px}
-.cta{min-height:360px}.cta .btn{width:100%;text-align:center}
-}
-/* small phones */
-@media(max-width:380px){.fg{grid-template-columns:1fr}.logo small{display:none}.cal,.form{padding:16px}}
-/* landscape phones / short screens: keep hero readable */
-@media(max-height:480px) and (orientation:landscape){
-.full{min-height:calc(100vh - var(--hh));min-height:max(360px,calc(100svh - var(--hh)))}
-.full .wrap{padding-top:30px;padding-bottom:30px}h1{font-size:34px}.full p{margin:10px 0 16px}
-}
-@media(hover:none){.cat:hover::before{background:linear-gradient(180deg,rgba(24,27,20,0) 30%,rgba(24,27,20,.85))}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-</style>
+    * {
+      box-sizing: border-box;
+      margin: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 15px/1.7 Inter, system-ui, sans-serif
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -.01em
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 78px)
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 44px)
+    }
+
+    h3 {
+      font-size: 24px
+    }
+
+    a {
+      color: inherit
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 28px
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245, 241, 232, .94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      padding-top: env(safe-area-inset-top, 0px)
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--hh)
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none
+    }
+
+    .logo img {
+      height: 42px;
+      width: auto;
+      display: block;
+      object-fit: contain
+    }
+
+    .logo-text {
+      font: 500 20px Newsreader, serif;
+      letter-spacing: .04em;
+      line-height: 1.1;
+      display: flex;
+      flex-direction: column
+    }
+
+    .logo-text small {
+      display: block;
+      font: 400 10px Inter;
+      letter-spacing: .14em;
+      color: var(--mute);
+      margin-top: 2px
+    }
+
+    .links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      font-size: 14px
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--mute)
+    }
+
+    .links a.on,
+    .links a:hover {
+      color: var(--ink)
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--sage);
+      color: #fff !important;
+      padding: 13px 24px;
+      border: 0;
+      border-radius: 2px;
+      font: 500 14px Inter;
+      text-decoration: none;
+      cursor: pointer
+    }
+
+    .btn:hover {
+      background: #778268
+    }
+
+    .btn.dk {
+      background: var(--dark)
+    }
+
+    .btn.lt {
+      background: #f5f1e8;
+      color: var(--ink) !important
+    }
+
+    .ul {
+      font-size: 14px;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 2px;
+      text-decoration: none
+    }
+
+    .burger {
+      display: none;
+      background: none;
+      border: 0;
+      font-size: 26px;
+      cursor: pointer
+    }
+
+    .page {
+      display: none
+    }
+
+    .page.show {
+      display: block
+    }
+
+    /* background images */
+    [data-bg] {
+      background-size: cover;
+      background-position: center;
+      background-color: #4b5043
+    }
+
+    .full {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      color: #fff;
+      min-height: calc(100vh - var(--hh));
+      min-height: calc(100svh - var(--hh) - env(safe-area-inset-top, 0px))
+    }
+
+    .full::before,
+    .shade::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(24, 27, 20, .25) 0%, rgba(24, 27, 20, .72) 100%)
+    }
+
+    .full .wrap {
+      position: relative;
+      padding-top: 60px;
+      padding-bottom: 72px;
+      width: 100%
+    }
+
+    .full p {
+      max-width: 480px;
+      margin: 20px 0 30px;
+      color: #ece8dc;
+      font-size: 16.5px
+    }
+
+    .full h1 {
+      max-width: 760px
+    }
+
+    .shade {
+      position: relative;
+      color: #fff
+    }
+
+    .shade>* {
+      position: relative
+    }
+
+    .sec {
+      padding: 84px 0
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center
+    }
+
+    .intro p {
+      color: var(--mute);
+      margin-top: 14px
+    }
+
+    .im {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      background: var(--sage-l)
+    }
+
+    .im.t {
+      aspect-ratio: 4/3
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 60px;
+      border-top: 1px solid var(--line)
+    }
+
+    .facts div {
+      padding: 26px 24px 0 0
+    }
+
+    .facts div+div {
+      padding-left: 24px;
+      border-left: 1px solid var(--line)
+    }
+
+    .facts h3 {
+      font-size: 22px;
+      margin-bottom: 6px
+    }
+
+    .facts p {
+      color: var(--mute);
+      font-size: 14px
+    }
+
+    .cats {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 36px
+    }
+
+    .cat {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      color: #fff;
+      text-decoration: none;
+      overflow: hidden
+    }
+
+    .cat::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(24, 27, 20, 0) 30%, rgba(24, 27, 20, .85));
+      transition: .3s
+    }
+
+    .cat:hover::before {
+      background: linear-gradient(180deg, rgba(24, 27, 20, .1), rgba(24, 27, 20, .92))
+    }
+
+    .cat>* {
+      position: relative
+    }
+
+    .cat h3 {
+      font-size: 22px
+    }
+
+    .cat span {
+      font-size: 13px;
+      color: #e4e0d3
+    }
+
+    .cta {
+      min-height: 460px;
+      display: flex;
+      align-items: center
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 34, 26, .62)
+    }
+
+    .cta .wrap {
+      position: relative
+    }
+
+    .cta p {
+      max-width: 520px;
+      margin: 16px 0 26px;
+      color: #ece8dc
+    }
+
+    .pay {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0
+    }
+
+    .pay>div {
+      background: var(--bg);
+      color: var(--ink);
+      padding: 36px 32px
+    }
+
+    .pay h3 {
+      font-size: 22px;
+      margin-bottom: 8px
+    }
+
+    .pay p {
+      color: var(--mute);
+      font-size: 14.5px
+    }
+
+    .payw {
+      padding: 90px 0
+    }
+
+    .payw::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 34, 26, .5)
+    }
+
+    .payw h2 {
+      margin-bottom: 30px
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      align-items: stretch;
+      margin-bottom: 0
+    }
+
+    .row .im {
+      height: 100%;
+      min-height: 420px
+    }
+
+    .row .tx {
+      padding: 56px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center
+    }
+
+    .row:nth-child(even) .im {
+      order: 2
+    }
+
+    .row:nth-child(even) {
+      background: var(--sand)
+    }
+
+    .row ul {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0
+    }
+
+    .row li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14.5px
+    }
+
+    .row li:last-child {
+      border: 0
+    }
+
+    .book {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      max-width: 860px;
+      margin: -60px auto 90px;
+      position: relative;
+      z-index: 2;
+      border: 1px solid var(--line);
+      background: #faf7f0;
+      box-shadow: 0 18px 50px rgba(30, 34, 26, .18)
+    }
+
+    .cal {
+      padding: 28px;
+      border-right: 1px solid var(--line)
+    }
+
+    .cal-h {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      font-family: Newsreader, serif;
+      font-size: 20px
+    }
+
+    .cal-h button {
+      background: none;
+      border: 0;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px 10px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      text-align: center;
+      font-size: 13px
+    }
+
+    .grid b {
+      font-weight: 400;
+      color: var(--mute);
+      font-size: 11px;
+      padding: 4px 0
+    }
+
+    .grid button {
+      aspect-ratio: 1;
+      border: 0;
+      background: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font: inherit;
+      color: var(--ink)
+    }
+
+    .grid button:hover:not(:disabled) {
+      background: var(--sand)
+    }
+
+    .grid button:disabled {
+      color: #bdb6a6;
+      cursor: default
+    }
+
+    .grid button.sel {
+      background: var(--sage);
+      color: #fff
+    }
+
+    .form {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px
+    }
+
+    label {
+      font-size: 13px;
+      color: var(--mute);
+      display: block;
+      margin-bottom: 6px
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font: inherit;
+      border-radius: 2px;
+      color: var(--ink)
+    }
+
+    .times {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .times button {
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 2px
+    }
+
+    .times button.sel {
+      background: var(--sage);
+      color: #fff;
+      border-color: var(--sage)
+    }
+
+    .note {
+      font-size: 12.5px;
+      color: var(--mute)
+    }
+
+    .err {
+      color: #9a3b2b;
+      font-size: 13px;
+      min-height: 18px
+    }
+
+    .ok {
+      padding: 60px 28px;
+      text-align: center;
+      grid-column: 1/-1
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 0
+    }
+
+    .contact .info {
+      padding: 64px 52px 64px max(28px, calc((100vw - 1120px)/2 + 28px))
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 14px 16px;
+      margin-top: 24px;
+      font-size: 14.5px
+    }
+
+    dt {
+      color: var(--mute)
+    }
+
+    dd {
+      margin: 0
+    }
+
+    .map {
+      border: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      display: block;
+      filter: saturate(.8)
+    }
+
+    footer {
+      background: var(--dark);
+      color: #d9d6c9;
+      padding: 56px 0 30px
+    }
+
+    .fg {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px
+    }
+
+    footer h4 {
+      font: 500 17px Newsreader, serif;
+      color: #fff;
+      margin-bottom: 10px
+    }
+
+    footer a {
+      display: block;
+      text-decoration: none;
+      color: #b9b6a8;
+      font-size: 14px;
+      padding: 3px 0
+    }
+
+    footer a:hover {
+      color: #fff
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #b9b6a8
+    }
+
+    .copy {
+      border-top: 1px solid #4d5246;
+      margin-top: 36px;
+      padding-top: 18px;
+      font-size: 12.5px;
+      color: #8f8c7f
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--sage);
+      outline-offset: 2px
+    }
+
+    @media(max-width:860px) {
+      .links {
+        position: absolute;
+        top: calc(var(--hh) + env(safe-area-inset-top, 0px));
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 28px;
+        gap: 16px;
+        border-bottom: 1px solid var(--line);
+        display: none
+      }
+
+      .links.open {
+        display: flex
+      }
+
+      .burger {
+        display: block
+      }
+
+      .intro,
+      .row,
+      .contact,
+      .pay {
+        grid-template-columns: 1fr
+      }
+
+      .intro {
+        gap: 30px
+      }
+
+      .row .im {
+        min-height: 260px
+      }
+
+      .row:nth-child(even) .im {
+        order: 0
+      }
+
+      .row .tx {
+        padding: 36px 28px
+      }
+
+      .cats {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .cat {
+        min-height: 240px
+      }
+
+      .cat:last-child {
+        grid-column: 1/-1
+      }
+
+      .facts {
+        grid-template-columns: 1fr
+      }
+
+      .facts div+div {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        margin-top: 20px
+      }
+
+      .book {
+        grid-template-columns: 1fr;
+        margin-inline: 16px
+      }
+
+      .cal {
+        border-right: 0;
+        border-bottom: 1px solid var(--line)
+      }
+
+      .contact .info {
+        padding: 44px 28px
+      }
+
+      .map {
+        min-height: 380px
+      }
+
+      .fg {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    .links a.btn {
+      padding: 12px 24px;
+      line-height: 1.2;
+      white-space: nowrap;
+      border-radius: 2px;
+      color: #fff;
+      text-align: center
+    }
+
+    @media(max-width:860px) {
+      .links a.btn {
+        width: auto;
+        margin-top: 4px
+      }
+    }
+
+    /* ---- responsive hardening ---- */
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      overflow-x: hidden
+    }
+
+    img,
+    iframe {
+      max-width: 100%
+    }
+
+    .wrap {
+      padding-left: max(28px, env(safe-area-inset-left));
+      padding-right: max(28px, env(safe-area-inset-right))
+    }
+
+    .burger {
+      min-width: 44px;
+      min-height: 44px
+    }
+
+    select,
+    input {
+      font-size: 16px;
+      min-height: 44px
+    }
+
+    .times button,
+    .btn {
+      min-height: 44px
+    }
+
+    .links a {
+      padding: 4px 0
+    }
+
+    dd {
+      overflow-wrap: anywhere
+    }
+
+    /* large screens */
+    @media(min-width:1600px) {
+      .wrap {
+        max-width: 1280px
+      }
+
+      body {
+        font-size: 16px
+      }
+
+      .contact .info {
+        padding-left: max(28px, calc((100vw - 1280px)/2 + 28px))
+      }
+    }
+
+    /* laptop / tablet landscape */
+    @media(max-width:1100px) {
+      .cats {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .cat {
+        min-height: 300px
+      }
+
+      .cat:nth-child(n+4) {
+        grid-column: span 1
+      }
+
+      .row .tx {
+        padding: 44px 36px
+      }
+
+      .fg {
+        grid-template-columns: 1fr 1fr 1fr
+      }
+
+      .fg>div:first-child {
+        grid-column: 1/-1
+      }
+
+      .contact .info {
+        padding-right: 32px
+      }
+    }
+
+    /* tablet portrait */
+    @media(max-width:860px) {
+      .cats {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .cat:last-child {
+        grid-column: 1/-1
+      }
+
+      .pay {
+        gap: 0
+      }
+
+      .payw {
+        padding: 64px 0
+      }
+
+      .sec {
+        padding: 60px 0
+      }
+
+      .book {
+        margin-top: -40px
+      }
+
+      .full .wrap {
+        padding-bottom: 56px
+      }
+
+      .fg>div:first-child {
+        grid-column: 1/-1
+      }
+
+      .links a {
+        padding: 6px 0;
+        width: 100%
+      }
+
+      .links a.btn {
+        width: auto
+      }
+    }
+
+    /* phones */
+    @media(max-width:600px) {
+      :root {
+        --hh: 60px
+      }
+
+      .logo img {
+        height: 34px
+      }
+
+      .logo-text {
+        font-size: 17px
+      }
+
+      .wrap {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right))
+      }
+
+      h1 {
+        font-size: clamp(36px, 11vw, 48px)
+      }
+
+      h2 {
+        font-size: clamp(26px, 8vw, 34px)
+      }
+
+      h3 {
+        font-size: 21px
+      }
+
+      .full p {
+        font-size: 15.5px
+      }
+
+      .full .btn {
+        width: 100%;
+        text-align: center
+      }
+
+      .cats {
+        grid-template-columns: 1fr
+      }
+
+      .cat {
+        min-height: 200px
+      }
+
+      .cat:last-child {
+        grid-column: auto
+      }
+
+      .facts h3 {
+        font-size: 20px
+      }
+
+      .row .im {
+        min-height: 220px;
+        aspect-ratio: 16/10
+      }
+
+      .row .tx {
+        padding: 30px 20px
+      }
+
+      .cal,
+      .form {
+        padding: 20px
+      }
+
+      .book {
+        margin-inline: 12px
+      }
+
+      .grid {
+        gap: 2px
+      }
+
+      .grid button {
+        font-size: 12.5px;
+        min-height: 38px
+      }
+
+      .times button {
+        flex: 1 0 30%
+      }
+
+      dl {
+        grid-template-columns: 1fr;
+        gap: 2px 0
+      }
+
+      dt {
+        margin-top: 12px;
+        font-size: 13px
+      }
+
+      .contact .info {
+        padding: 36px 20px
+      }
+
+      .contact .btn {
+        display: block;
+        text-align: center
+      }
+
+      .contact .ul {
+        display: inline-block;
+        margin: 16px 0 0 !important
+      }
+
+      .map {
+        min-height: 320px
+      }
+
+      .fg {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px
+      }
+
+      .cta {
+        min-height: 360px
+      }
+
+      .cta .btn {
+        width: 100%;
+        text-align: center
+      }
+    }
+
+    /* small phones */
+    @media(max-width:380px) {
+      .fg {
+        grid-template-columns: 1fr
+      }
+
+      .logo-text small {
+        display: none
+      }
+
+      .cal,
+      .form {
+        padding: 16px
+      }
+    }
+
+    /* landscape phones / short screens: keep hero readable */
+    @media(max-height:480px) and (orientation:landscape) {
+      .full {
+        min-height: calc(100vh - var(--hh));
+        min-height: max(360px, calc(100svh - var(--hh)))
+      }
+
+      .full .wrap {
+        padding-top: 30px;
+        padding-bottom: 30px
+      }
+
+      h1 {
+        font-size: 34px
+      }
+
+      .full p {
+        margin: 10px 0 16px
+      }
+    }
+
+    @media(hover:none) {
+      .cat:hover::before {
+        background: linear-gradient(180deg, rgba(24, 27, 20, 0) 30%, rgba(24, 27, 20, .85))
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      * {
+        transition: none !important
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header><div class="wrap"><nav>
-<a class="logo" href="#/">PRIMECARE<small>SIGNATURE · AVENUE K</small></a>
-<button class="burger" aria-label="Menu" id="bg">≡</button>
-<div class="links" id="lk">
-<a href="#/">Utama</a><a href="#/rawatan">Rawatan</a><a href="#/hubungi">Lokasi</a><a href="#/tempahan" class="btn dk">Tempah Temu Janji</a>
-</div></nav></div></header>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="logo" href="#/">
+          <img src="logo.png" alt="PrimeCare Dental Clinic Logo">
+          <div class="logo-text">
+            PRIMECARE
+            <small>SIGNATURE · AVENUE K</small>
+          </div>
+        </a>
+        <button class="burger" aria-label="Menu" id="bg">≡</button>
+        <div class="links" id="lk">
+          <a href="#/">Utama</a><a href="#/rawatan">Rawatan</a><a href="#/hubungi">Lokasi</a><a href="#/tempahan"
+            class="btn dk">Tempah Temu Janji</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-<main>
-<!-- UTAMA -->
-<div class="page" id="p-">
-<section class="full" data-bg="1606811841689-23dfddce3e95"><div class="wrap">
-<h1>Penjagaan gigi moden, di tengah Kuala Lumpur.</h1>
-<p>Klinik signature PrimeCare di Avenue K, bertentangan Suria KLCC. Setiap rawatan berasaskan temu janji supaya anda tidak menunggu lama.</p>
-<a class="btn" href="#/tempahan">Tempah Lawatan Anda</a>
-</div></section>
+  <main>
+    <!-- UTAMA -->
+    <div class="page" id="p-">
+      <section class="full" data-bg="1606811841689-23dfddce3e95">
+        <div class="wrap">
+          <h1>Penjagaan gigi moden, di tengah Kuala Lumpur.</h1>
+          <p>Klinik signature PrimeCare di Avenue K, bertentangan Suria KLCC. Setiap rawatan berasaskan temu janji
+            supaya anda tidak menunggu lama.</p>
+          <a class="btn" href="#/tempahan">Tempah Lawatan Anda</a>
+        </div>
+      </section>
 
-<section class="sec"><div class="wrap">
-<div class="intro">
-<div><h2>Cawangan premium PrimeCare Dental Clinic.</h2>
-<p>Signature PrimeCare ialah outlet utama dalam rangkaian PrimeCare Dental Clinic. Ortodontik, pergigian kosmetik, restorasi dan penjagaan am, semuanya dalam satu lokasi.</p>
-<p>Terbuka setiap hari hingga 10 malam, jadi anda boleh datang selepas waktu kerja.</p>
-<p style="margin-top:22px"><a class="ul" href="#/rawatan" style="color:var(--ink)">Lihat semua rawatan</a></p></div>
-<img class="im t" data-src="1588776814546-1ffcf47267a5" alt="Doktor gigi merawat pesakit">
-</div>
-<div class="facts">
-<div><h3>Setiap hari, 10 pagi – 10 malam</h3><p>Isnin hingga Ahad. Walk-in diterima mengikut kekosongan slot.</p></div>
-<div><h3>Sebelah LRT dan MRT KLCC</h3><p>Stesen LRT KLCC (Kelana Jaya) dan MRT Persiaran KLCC.</p></div>
-<div><h3>Parkir dan valet</h3><p>Parkir bawah tanah Avenue K serta perkhidmatan valet.</p></div>
-</div></div></section>
+      <section class="sec">
+        <div class="wrap">
+          <div class="intro">
+            <div>
+              <h2>Cawangan premium PrimeCare Dental Clinic.</h2>
+              <p>Signature PrimeCare ialah outlet utama dalam rangkaian PrimeCare Dental Clinic. Ortodontik, pergigian
+                kosmetik, restorasi dan penjagaan am, semuanya dalam satu lokasi.</p>
+              <p>Terbuka setiap hari hingga 10 malam, jadi anda boleh datang selepas waktu kerja.</p>
+              <p style="margin-top:22px"><a class="ul" href="#/rawatan" style="color:var(--ink)">Lihat semua rawatan</a>
+              </p>
+            </div>
+            <img class="im t" data-src="1588776814546-1ffcf47267a5" alt="Doktor gigi merawat pesakit">
+          </div>
+          <div class="facts">
+            <div>
+              <h3>Setiap hari, 10 pagi – 10 malam</h3>
+              <p>Isnin hingga Ahad. Walk-in diterima mengikut kekosongan slot.</p>
+            </div>
+            <div>
+              <h3>Sebelah LRT dan MRT KLCC</h3>
+              <p>Stesen LRT KLCC (Kelana Jaya) dan MRT Persiaran KLCC.</p>
+            </div>
+            <div>
+              <h3>Parkir dan valet</h3>
+              <p>Parkir bawah tanah Avenue K serta perkhidmatan valet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section class="sec" style="background:var(--sand);padding-top:70px"><div class="wrap">
-<h2>Lima kategori rawatan</h2>
-<div class="cats">
-<a class="cat" href="#/rawatan" data-bg="1606265752439-1f18756aa5fc"><h3>Ortodontik</h3><span>Invisalign, braces, retainer</span></a>
-<a class="cat" href="#/rawatan" data-bg="1598256989800-fe5f95da9787"><h3>Kosmetik</h3><span>Pemutihan, veneer, smile makeover</span></a>
-<a class="cat" href="#/rawatan" data-bg="1629909613654-28e377c37b09"><h3>Restorasi</h3><span>Implan, root canal, crown</span></a>
-<a class="cat" href="#/rawatan" data-bg="1609840114035-3c981b782dfe"><h3>Penjagaan am</h3><span>Pemeriksaan, cuci gigi, tampalan</span></a>
-<a class="cat" href="#/rawatan" data-bg="1570172619644-dfd03ed5d881"><h3>Kanak-kanak</h3><span>Pediatrik, night guard, sleep apnea</span></a>
-</div></div></section>
+      <section class="sec" style="background:var(--sand);padding-top:70px">
+        <div class="wrap">
+          <h2>Lima kategori rawatan</h2>
+          <div class="cats">
+            <a class="cat" href="#/rawatan" data-bg="1606265752439-1f18756aa5fc">
+              <h3>Ortodontik</h3><span>Invisalign, braces, retainer</span>
+            </a>
+            <a class="cat" href="#/rawatan" data-bg="1598256989800-fe5f95da9787">
+              <h3>Kosmetik</h3><span>Pemutihan, veneer, smile makeover</span>
+            </a>
+            <a class="cat" href="#/rawatan" data-bg="1629909613654-28e377c37b09">
+              <h3>Restorasi</h3><span>Implan, root canal, crown</span>
+            </a>
+            <a class="cat" href="#/rawatan" data-bg="1609840114035-3c981b782dfe">
+              <h3>Penjagaan am</h3><span>Pemeriksaan, cuci gigi, tampalan</span>
+            </a>
+            <a class="cat" href="#/rawatan" data-bg="1570172619644-dfd03ed5d881">
+              <h3>Kanak-kanak</h3><span>Pediatrik, night guard, sleep apnea</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
-<section class="shade payw" data-bg="1588776814546-1ffcf47267a5"><div class="wrap">
-<h2>Bayaran yang fleksibel</h2>
-<div class="pay">
-<div><h3>Temu janji dahulu</h3><p>Rawatan berasaskan temu janji bagi mengelakkan masa menunggu yang lama.</p></div>
-<div style="background:var(--sand)"><h3>Panel dan insurans</h3><p>Kerjasama dengan penyedia TPA terpilih seperti MediExpress dan panel korporat swasta.</p></div>
-<div><h3>Pelan ansuran</h3><p>Ansuran kad kredit untuk rawatan bernilai tinggi: Invisalign, pembedahan implan dan sarung gigi.</p></div>
-</div></div></section>
+      <section class="shade payw" data-bg="1588776814546-1ffcf47267a5">
+        <div class="wrap">
+          <h2>Bayaran yang fleksibel</h2>
+          <div class="pay">
+            <div>
+              <h3>Temu janji dahulu</h3>
+              <p>Rawatan berasaskan temu janji bagi mengelakkan masa menunggu yang lama.</p>
+            </div>
+            <div style="background:var(--sand)">
+              <h3>Panel dan insurans</h3>
+              <p>Kerjasama dengan penyedia TPA terpilih seperti MediExpress dan panel korporat swasta.</p>
+            </div>
+            <div>
+              <h3>Pelan ansuran</h3>
+              <p>Ansuran kad kredit untuk rawatan bernilai tinggi: Invisalign, pembedahan implan dan sarung gigi.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section class="shade cta" data-bg="1598256989800-fe5f95da9787"><div class="wrap">
-<h2>Mulakan dengan satu pemeriksaan.</h2>
-<p>Pilih tarikh dan masa yang sesuai. Kami sahkan melalui WhatsApp.</p>
-<a class="btn lt" href="#/tempahan">Tempah Temu Janji</a>
-</div></section>
-</div>
+      <section class="shade cta" data-bg="1598256989800-fe5f95da9787">
+        <div class="wrap">
+          <h2>Mulakan dengan satu pemeriksaan.</h2>
+          <p>Pilih tarikh dan masa yang sesuai. Kami sahkan melalui WhatsApp.</p>
+          <a class="btn lt" href="#/tempahan">Tempah Temu Janji</a>
+        </div>
+      </section>
+    </div>
 
-<!-- RAWATAN -->
-<div class="page" id="p-rawatan">
-<section class="full" data-bg="1609840114035-3c981b782dfe"><div class="wrap"><h1>Rawatan Kami</h1><p>Lima kategori, satu klinik. Pilih rawatan, kemudian tempah slot yang sesuai.</p></div></section>
-<div class="row"><img class="im" data-src="1606265752439-1f18756aa5fc" alt="Rawatan ortodontik"><div class="tx"><h2>Penyusunan gigi</h2><ul>
-<li>Invisalign (Clear Aligners)</li><li>Pendakap gigi konvensional (Metal Braces)</li><li>Pendakap gigi seramik (Ceramic Braces)</li><li>Pendakap gigi tanpa getah (Self-ligating / Damon Braces)</li><li>Retainer (Clear Retainer &amp; Fixed Retainer)</li></ul></div></div>
-<div class="row"><img class="im" data-src="1598256989800-fe5f95da9787" alt="Pergigian kosmetik"><div class="tx"><h2>Pergigian kosmetik dan estetik</h2><ul>
-<li>Pemutihan gigi profesional (Teeth Whitening)</li><li>Veneer gigi (Porcelain &amp; Composite Veneer)</li><li>Smile makeover menyeluruh</li></ul></div></div>
-<div class="row"><img class="im" data-src="1629909613654-28e377c37b09" alt="Restorasi gigi"><div class="tx"><h2>Restorasi dan penggantian gigi</h2><ul>
-<li>Implan gigi (Dental Implants &amp; All-on-4)</li><li>Rawatan akar (Root Canal Treatment)</li><li>Sarung gigi (Zirconia, PFM, Porcelain) dan jambatan gigi</li><li>Tampalan inlay, onlay dan overlay seramik</li><li>Gigi palsu (Full, Partial dan Flexible Dentures)</li></ul></div></div>
-<div class="row"><img class="im" data-src="1588776814546-1ffcf47267a5" alt="Penjagaan gigi am"><div class="tx"><h2>Penjagaan am dan pencegahan</h2><ul>
-<li>Pemeriksaan oral dan X-ray digital (OPG / Periapical)</li><li>Cuci gigi (Scaling &amp; Polishing) dan rawatan fluorida</li><li>Tampalan sepadan warna gigi (Composite resin)</li><li>Cabutan gigi biasa dan pembedahan gigi bongsu</li></ul></div></div>
-<div class="row"><img class="im" data-src="1570172619644-dfd03ed5d881" alt="Pergigian kanak-kanak"><div class="tx"><h2>Pergigian kanak-kanak dan lanjutan</h2><ul>
-<li>Perkhidmatan mesra kanak-kanak (Pediatric dentistry)</li><li>Night guard</li><li>Rawatan dengkur / sleep apnea (Oral Appliance Therapy)</li></ul>
-<p style="margin-top:26px"><a class="btn" href="#/tempahan">Tempah Temu Janji</a></p></div></div>
-</div>
+    <!-- RAWATAN -->
+    <div class="page" id="p-rawatan">
+      <section class="full" data-bg="1609840114035-3c981b782dfe">
+        <div class="wrap">
+          <h1>Rawatan Kami</h1>
+          <p>Lima kategori, satu klinik. Pilih rawatan, kemudian tempah slot yang sesuai.</p>
+        </div>
+      </section>
+      <div class="row"><img class="im" data-src="1606265752439-1f18756aa5fc" alt="Rawatan ortodontik">
+        <div class="tx">
+          <h2>Penyusunan gigi</h2>
+          <ul>
+            <li>Invisalign (Clear Aligners)</li>
+            <li>Pendakap gigi konvensional (Metal Braces)</li>
+            <li>Pendakap gigi seramik (Ceramic Braces)</li>
+            <li>Pendakap gigi tanpa getah (Self-ligating / Damon Braces)</li>
+            <li>Retainer (Clear Retainer &amp; Fixed Retainer)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row"><img class="im" data-src="1598256989800-fe5f95da9787" alt="Pergigian kosmetik">
+        <div class="tx">
+          <h2>Pergigian kosmetik dan estetik</h2>
+          <ul>
+            <li>Pemutihan gigi profesional (Teeth Whitening)</li>
+            <li>Veneer gigi (Porcelain &amp; Composite Veneer)</li>
+            <li>Smile makeover menyeluruh</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row"><img class="im" data-src="1629909613654-28e377c37b09" alt="Restorasi gigi">
+        <div class="tx">
+          <h2>Restorasi dan penggantian gigi</h2>
+          <ul>
+            <li>Implan gigi (Dental Implants &amp; All-on-4)</li>
+            <li>Rawatan akar (Root Canal Treatment)</li>
+            <li>Sarung gigi (Zirconia, PFM, Porcelain) dan jambatan gigi</li>
+            <li>Tampalan inlay, onlay dan overlay seramik</li>
+            <li>Gigi palsu (Full, Partial dan Flexible Dentures)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row"><img class="im" data-src="1588776814546-1ffcf47267a5" alt="Penjagaan gigi am">
+        <div class="tx">
+          <h2>Penjagaan am dan pencegahan</h2>
+          <ul>
+            <li>Pemeriksaan oral dan X-ray digital (OPG / Periapical)</li>
+            <li>Cuci gigi (Scaling &amp; Polishing) dan rawatan fluorida</li>
+            <li>Tampalan sepadan warna gigi (Composite resin)</li>
+            <li>Cabutan gigi biasa dan pembedahan gigi bongsu</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row"><img class="im" data-src="1570172619644-dfd03ed5d881" alt="Pergigian kanak-kanak">
+        <div class="tx">
+          <h2>Pergigian kanak-kanak dan lanjutan</h2>
+          <ul>
+            <li>Perkhidmatan mesra kanak-kanak (Pediatric dentistry)</li>
+            <li>Night guard</li>
+            <li>Rawatan dengkur / sleep apnea (Oral Appliance Therapy)</li>
+          </ul>
+          <p style="margin-top:26px"><a class="btn" href="#/tempahan">Tempah Temu Janji</a></p>
+        </div>
+      </div>
+    </div>
 
-<!-- TEMPAHAN -->
-<div class="page" id="p-tempahan">
-<section class="full" data-bg="1606811841689-23dfddce3e95" style="padding-bottom:60px"><div class="wrap"><h1>Tempah Temu Janji</h1><p>Pilih rawatan, tarikh dan masa. Pasukan kami mengesahkan melalui WhatsApp.</p></div></section>
-<div class="book" id="bk">
-<div class="cal"><div class="cal-h"><button id="pv" aria-label="Bulan sebelum">‹</button><span id="mt"></span><button id="nx" aria-label="Bulan seterusnya">›</button></div><div class="grid" id="gd"></div></div>
-<div class="form">
-<div><label for="tr">Pilih rawatan</label><select id="tr">
-<option value="">Pilih rawatan</option>
-<option>Invisalign / Braces</option><option>Retainer</option><option>Pemutihan gigi</option><option>Veneer / Smile makeover</option><option>Implan gigi</option><option>Root canal</option><option>Crown / Bridge</option><option>Gigi palsu</option><option>Pemeriksaan / X-ray</option><option>Cuci gigi</option><option>Tampalan gigi</option><option>Cabutan / Gigi bongsu</option><option>Pergigian kanak-kanak</option><option>Night guard / Sleep apnea</option></select></div>
-<div><label>Pilih masa</label><div class="times" id="tm"></div></div>
-<div><label for="nm">Nama</label><input id="nm" placeholder="Nama penuh" autocomplete="name"></div>
-<div><label for="em">Emel</label><input id="em" type="email" placeholder="nama@emel.com" autocomplete="email"></div>
-<div class="err" id="er" role="alert"></div>
-<button class="btn" id="sb">Hantar Tempahan</button>
-<p class="note">Anda akan dibawa ke WhatsApp cawangan Avenue K untuk pengesahan.</p>
-</div></div></div>
+    <!-- TEMPAHAN -->
+    <div class="page" id="p-tempahan">
+      <section class="full" data-bg="1606811841689-23dfddce3e95" style="padding-bottom:60px">
+        <div class="wrap">
+          <h1>Tempah Temu Janji</h1>
+          <p>Pilih rawatan, tarikh dan masa. Pasukan kami mengesahkan melalui WhatsApp.</p>
+        </div>
+      </section>
+      <div class="book" id="bk">
+        <div class="cal">
+          <div class="cal-h"><button id="pv" aria-label="Bulan sebelum">‹</button><span id="mt"></span><button id="nx"
+              aria-label="Bulan seterusnya">›</button></div>
+          <div class="grid" id="gd"></div>
+        </div>
+        <div class="form">
+          <div><label for="tr">Pilih rawatan</label><select id="tr">
+              <option value="">Pilih rawatan</option>
+              <option>Invisalign / Braces</option>
+              <option>Retainer</option>
+              <option>Pemutihan gigi</option>
+              <option>Veneer / Smile makeover</option>
+              <option>Implan gigi</option>
+              <option>Root canal</option>
+              <option>Crown / Bridge</option>
+              <option>Gigi palsu</option>
+              <option>Pemeriksaan / X-ray</option>
+              <option>Cuci gigi</option>
+              <option>Tampalan gigi</option>
+              <option>Cabutan / Gigi bongsu</option>
+              <option>Pergigian kanak-kanak</option>
+              <option>Night guard / Sleep apnea</option>
+            </select></div>
+          <div><label>Pilih masa</label>
+            <div class="times" id="tm"></div>
+          </div>
+          <div><label for="nm">Nama</label><input id="nm" placeholder="Nama penuh" autocomplete="name"></div>
+          <div><label for="em">Emel</label><input id="em" type="email" placeholder="nama@emel.com" autocomplete="email">
+          </div>
+          <div class="err" id="er" role="alert"></div>
+          <button class="btn" id="sb">Hantar Tempahan</button>
+          <p class="note">Anda akan dibawa ke WhatsApp cawangan Avenue K untuk pengesahan.</p>
+        </div>
+      </div>
+    </div>
 
-<!-- LOKASI -->
-<div class="page" id="p-hubungi">
-<section class="full" data-bg="1629909613654-28e377c37b09"><div class="wrap"><h1>Lokasi dan Hubungi</h1><p>Bertentangan Suria KLCC, bersebelahan stesen LRT dan MRT.</p></div></section>
-<div class="contact">
-<div class="info"><h2>Avenue K, Jalan Ampang</h2>
-<dl>
-<dt>Alamat</dt><dd>Lot L1-1C, Level 1, Avenue K Shopping Mall, 156 Jalan Ampang, 50450 Kuala Lumpur</dd>
-<dt>Waktu operasi</dt><dd>Isnin – Ahad, 10:00 AM – 10:00 PM</dd>
-<dt>Cawangan Avenue K</dt><dd><a href="https://wa.me/601111916315">011-1191 6315</a> (telefon / WhatsApp)</dd>
-<dt>Khidmat pelanggan pusat</dt><dd><a href="https://wa.me/60164161828">016-416 1828</a></dd>
-<dt>LRT / MRT</dt><dd>Bersebelahan stesen LRT KLCC (Kelana Jaya) dan MRT Persiaran KLCC</dd>
-<dt>Parkir</dt><dd>Parkir bawah tanah Avenue K dan valet</dd></dl>
-<p style="margin-top:28px"><a class="btn" href="#/tempahan">Tempah Temu Janji</a> <a class="ul" style="margin-left:18px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Avenue+K+Shopping+Mall+156+Jalan+Ampang+Kuala+Lumpur">Buka di Google Maps</a></p></div>
-<iframe class="map" title="Peta Avenue K Shopping Mall" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Avenue+K+Shopping+Mall,+156+Jalan+Ampang,+50450+Kuala+Lumpur&output=embed"></iframe>
-</div></div>
-</main>
+    <!-- LOKASI -->
+    <div class="page" id="p-hubungi">
+      <section class="full" data-bg="1629909613654-28e377c37b09">
+        <div class="wrap">
+          <h1>Lokasi dan Hubungi</h1>
+          <p>Bertentangan Suria KLCC, bersebelahan stesen LRT dan MRT.</p>
+        </div>
+      </section>
+      <div class="contact">
+        <div class="info">
+          <h2>Avenue K, Jalan Ampang</h2>
+          <dl>
+            <dt>Alamat</dt>
+            <dd>Lot L1-1C, Level 1, Avenue K Shopping Mall, 156 Jalan Ampang, 50450 Kuala Lumpur</dd>
+            <dt>Waktu operasi</dt>
+            <dd>Isnin – Ahad, 10:00 AM – 10:00 PM</dd>
+            <dt>Cawangan Avenue K</dt>
+            <dd><a href="https://wa.me/601111916315">011-1191 6315</a> (telefon / WhatsApp)</dd>
+            <dt>Khidmat pelanggan pusat</dt>
+            <dd><a href="https://wa.me/60164161828">016-416 1828</a></dd>
+            <dt>LRT / MRT</dt>
+            <dd>Bersebelahan stesen LRT KLCC (Kelana Jaya) dan MRT Persiaran KLCC</dd>
+            <dt>Parkir</dt>
+            <dd>Parkir bawah tanah Avenue K dan valet</dd>
+          </dl>
+          <p style="margin-top:28px"><a class="btn" href="#/tempahan">Tempah Temu Janji</a> <a class="ul"
+              style="margin-left:18px" target="_blank" rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Avenue+K+Shopping+Mall+156+Jalan+Ampang+Kuala+Lumpur">Buka
+              di Google Maps</a></p>
+        </div>
+        <iframe class="map" title="Peta Avenue K Shopping Mall" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Avenue+K+Shopping+Mall,+156+Jalan+Ampang,+50450+Kuala+Lumpur&output=embed"></iframe>
+      </div>
+    </div>
+  </main>
 
-<footer><div class="wrap"><div class="fg">
-<div><h4>PrimeCare Signature</h4><p>Lot L1-1C, Level 1, Avenue K Shopping Mall, 156 Jalan Ampang, 50450 Kuala Lumpur</p></div>
-<div><h4>Laman</h4><a href="#/">Utama</a><a href="#/rawatan">Rawatan</a><a href="#/tempahan">Tempahan</a><a href="#/hubungi">Lokasi</a></div>
-<div><h4>Hubungi</h4><a href="https://wa.me/601111916315">011-1191 6315</a><a href="https://wa.me/60164161828">016-416 1828</a></div>
-<div><h4>Waktu</h4><p>Isnin – Ahad<br>10:00 AM – 10:00 PM</p></div>
-</div><div class="copy">© 2026 Signature PrimeCare Dental Clinic. Hak cipta terpelihara.</div></div></footer>
+  <footer>
+    <div class="wrap">
+      <div class="fg">
+        <div>
+          <h4>PrimeCare Signature</h4>
+          <p>Lot L1-1C, Level 1, Avenue K Shopping Mall, 156 Jalan Ampang, 50450 Kuala Lumpur</p>
+        </div>
+        <div>
+          <h4>Laman</h4><a href="#/">Utama</a><a href="#/rawatan">Rawatan</a><a href="#/tempahan">Tempahan</a><a
+            href="#/hubungi">Lokasi</a>
+        </div>
+        <div>
+          <h4>Hubungi</h4><a href="https://wa.me/601111916315">011-1191 6315</a><a
+            href="https://wa.me/60164161828">016-416 1828</a>
+        </div>
+        <div>
+          <h4>Waktu</h4>
+          <p>Isnin – Ahad<br>10:00 AM – 10:00 PM</p>
+        </div>
+      </div>
+      <div class="copy">© 2026 Signature PrimeCare Dental Clinic. Hak cipta terpelihara.</div>
+    </div>
+  </footer>
 
-<script>
-const $=s=>document.querySelector(s);
-const U=(id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
-document.querySelectorAll('[data-bg]').forEach(e=>e.style.backgroundImage=`url(${U(e.dataset.bg,1920)})`);
-document.querySelectorAll('img[data-src]').forEach(e=>{e.src=U(e.dataset.src,1200);e.loading='lazy'});
+  <script>
+    const $ = s => document.querySelector(s);
+    const U = (id, w) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=70`;
+    document.querySelectorAll('[data-bg]').forEach(e => e.style.backgroundImage = `url(${U(e.dataset.bg, 1920)})`);
+    document.querySelectorAll('img[data-src]').forEach(e => { e.src = U(e.dataset.src, 1200); e.loading = 'lazy' });
 
-function route(){
-  const h=(location.hash.replace('#/','')||'');
-  const k=['rawatan','tempahan','hubungi'].includes(h)?h:'';
-  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('show',p.id==='p-'+k));
-  document.querySelectorAll('.links a:not(.btn)').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#/'+k));
-  $('#lk').classList.remove('open');window.scrollTo(0,0);
-  document.title=({'':'Signature PrimeCare Dental Clinic',rawatan:'Rawatan',tempahan:'Tempah Temu Janji',hubungi:'Lokasi dan Hubungi'})[k]+' – PrimeCare Avenue K';
-}
-addEventListener('hashchange',route);route();
-$('#bg').onclick=()=>$('#lk').classList.toggle('open');
+    function route() {
+      const h = (location.hash.replace('#/', '') || '');
+      const k = ['rawatan', 'tempahan', 'hubungi'].includes(h) ? h : '';
+      document.querySelectorAll('.page').forEach(p => p.classList.toggle('show', p.id === 'p-' + k));
+      document.querySelectorAll('.links a:not(.btn)').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#/' + k));
+      $('#lk').classList.remove('open'); window.scrollTo(0, 0);
+      document.title = ({ '': 'Signature PrimeCare Dental Clinic', rawatan: 'Rawatan', tempahan: 'Tempah Temu Janji', hubungi: 'Lokasi dan Hubungi' })[k] + ' – PrimeCare Avenue K';
+    }
+    addEventListener('hashchange', route); route();
+    $('#bg').onclick = () => $('#lk').classList.toggle('open');
 
-const bln=['Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember'];
-const now=new Date();let y=now.getFullYear(),m=now.getMonth(),selD=null,selT=null;
-const slots=['10:00 AM','12:00 PM','2:00 PM','4:00 PM','6:00 PM','8:00 PM'];
-function cal(){
-  $('#mt').textContent=bln[m]+' '+y;
-  const g=$('#gd');g.innerHTML='';
-  ['Is','Se','Ra','Kh','Ju','Sa','Ah'].forEach(d=>{const b=document.createElement('b');b.textContent=d;g.appendChild(b)});
-  const first=(new Date(y,m,1).getDay()+6)%7,dim=new Date(y,m+1,0).getDate();
-  for(let i=0;i<first;i++)g.appendChild(document.createElement('span'));
-  const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
-  for(let d=1;d<=dim;d++){
-    const b=document.createElement('button'),dt=new Date(y,m,d);b.textContent=d;b.disabled=dt<today;
-    if(selD&&selD.getTime()===dt.getTime())b.classList.add('sel');
-    b.onclick=()=>{selD=dt;cal()};g.appendChild(b);
-  }
-}
-$('#pv').onclick=()=>{m--;if(m<0){m=11;y--}cal()};
-$('#nx').onclick=()=>{m++;if(m>11){m=0;y++}cal()};
-slots.forEach(t=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{selT=t;document.querySelectorAll('#tm button').forEach(x=>x.classList.toggle('sel',x===b))};$('#tm').appendChild(b)});
-cal();
-$('#sb').onclick=()=>{
-  const tr=$('#tr').value,nm=$('#nm').value.trim(),em=$('#em').value.trim(),er=$('#er');
-  if(!tr)return er.textContent='Pilih rawatan dahulu.';
-  if(!selD)return er.textContent='Pilih tarikh pada kalendar.';
-  if(!selT)return er.textContent='Pilih masa yang anda mahu.';
-  if(!nm)return er.textContent='Masukkan nama anda.';
-  if(!/^\S+@\S+\.\S+$/.test(em))return er.textContent='Masukkan alamat emel yang sah.';
-  er.textContent='';
-  const tkh=selD.getDate()+' '+bln[selD.getMonth()]+' '+selD.getFullYear();
-  const msg=`Salam, saya ${nm} (${em}) ingin menempah temu janji.\nRawatan: ${tr}\nTarikh: ${tkh}\nMasa: ${selT}`;
-  const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
-  $('#bk').innerHTML='<div class="ok"><h2>Terima kasih, '+esc(nm)+'.</h2><p style="margin:14px 0 26px;color:var(--mute)">Teruskan ke WhatsApp untuk menghantar permintaan: '+esc(tr)+', '+tkh+', '+selT+'.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/601111916315?text='+encodeURIComponent(msg)+'">Hantar melalui WhatsApp</a></div>';
-};
-</script>
+    const bln = ['Januari', 'Februari', 'Mac', 'April', 'Mei', 'Jun', 'Julai', 'Ogos', 'September', 'Oktober', 'November', 'Disember'];
+    const now = new Date(); let y = now.getFullYear(), m = now.getMonth(), selD = null, selT = null;
+    const slots = ['10:00 AM', '12:00 PM', '2:00 PM', '4:00 PM', '6:00 PM', '8:00 PM'];
+    function cal() {
+      $('#mt').textContent = bln[m] + ' ' + y;
+      const g = $('#gd'); g.innerHTML = '';
+      ['Is', 'Se', 'Ra', 'Kh', 'Ju', 'Sa', 'Ah'].forEach(d => { const b = document.createElement('b'); b.textContent = d; g.appendChild(b) });
+      const first = (new Date(y, m, 1).getDay() + 6) % 7, dim = new Date(y, m + 1, 0).getDate();
+      for (let i = 0; i < first; i++)g.appendChild(document.createElement('span'));
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      for (let d = 1; d <= dim; d++) {
+        const b = document.createElement('button'), dt = new Date(y, m, d); b.textContent = d; b.disabled = dt < today;
+        if (selD && selD.getTime() === dt.getTime()) b.classList.add('sel');
+        b.onclick = () => { selD = dt; cal() }; g.appendChild(b);
+      }
+    }
+    $('#pv').onclick = () => { m--; if (m < 0) { m = 11; y-- } cal() };
+    $('#nx').onclick = () => { m++; if (m > 11) { m = 0; y++ } cal() };
+    slots.forEach(t => { const b = document.createElement('button'); b.textContent = t; b.onclick = () => { selT = t; document.querySelectorAll('#tm button').forEach(x => x.classList.toggle('sel', x === b)) }; $('#tm').appendChild(b) });
+    cal();
+    $('#sb').onclick = () => {
+      const tr = $('#tr').value, nm = $('#nm').value.trim(), em = $('#em').value.trim(), er = $('#er');
+      if (!tr) return er.textContent = 'Pilih rawatan dahulu.';
+      if (!selD) return er.textContent = 'Pilih tarikh pada kalendar.';
+      if (!selT) return er.textContent = 'Pilih masa yang anda mahu.';
+      if (!nm) return er.textContent = 'Masukkan nama anda.';
+      if (!/^\S+@\S+\.\S+$/.test(em)) return er.textContent = 'Masukkan alamat emel yang sah.';
+      er.textContent = '';
+      const tkh = selD.getDate() + ' ' + bln[selD.getMonth()] + ' ' + selD.getFullYear();
+      const msg = `Salam, saya ${nm} (${em}) ingin menempah temu janji.\nRawatan: ${tr}\nTarikh: ${tkh}\nMasa: ${selT}`;
+      const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+      $('#bk').innerHTML = '<div class="ok"><h2>Terima kasih, ' + esc(nm) + '.</h2><p style="margin:14px 0 26px;color:var(--mute)">Teruskan ke WhatsApp untuk menghantar permintaan: ' + esc(tr) + ', ' + tkh + ', ' + selT + '.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/601111916315?text=' + encodeURIComponent(msg) + '">Hantar melalui WhatsApp</a></div>';
+    };
+  </script>
 </body>
+
 </html>
