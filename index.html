@@ -434,6 +434,209 @@
       border: 0
     }
 
+    /* ---- STAFF PAGE STYLES (EDITORIAL LAYOUT) ---- */
+    .kicker {
+      font: 500 11px Inter, sans-serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--sage);
+      display: block;
+      margin-bottom: 10px
+    }
+
+    .lead-doc {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 64px;
+      align-items: center;
+      background: var(--sand);
+      padding: 52px;
+      border: 1px solid var(--line)
+    }
+
+    .lead-doc .im {
+      aspect-ratio: 4/5;
+      object-position: top center
+    }
+
+    .lead-quote {
+      font: italic 24px/1.4 Newsreader, Georgia, serif;
+      color: var(--ink);
+      margin: 22px 0;
+      padding-left: 20px;
+      border-left: 2px solid var(--sage)
+    }
+
+    .doc-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 26px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      font-size: 13.5px;
+      color: var(--mute)
+    }
+
+    .doc-meta strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 500;
+      margin-bottom: 2px
+    }
+
+    .sec-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 42px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .sec-head p {
+      max-width: 420px;
+      color: var(--mute);
+      font-size: 14.5px
+    }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px
+    }
+
+    .doc-card {
+      background: #faf7f0;
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s ease, box-shadow .25s ease
+    }
+
+    .doc-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 34px rgba(30, 34, 26, .08)
+    }
+
+    .doc-photo {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      background: var(--sage-l)
+    }
+
+    .doc-photo .im {
+      height: 100%;
+      object-position: top center
+    }
+
+    .doc-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(245, 241, 232, .92);
+      backdrop-filter: blur(4px);
+      padding: 4px 10px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink)
+    }
+
+    .doc-body {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1
+    }
+
+    .doc-role {
+      font-size: 11.5px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 6px;
+      font-weight: 500
+    }
+
+    .doc-body h3 {
+      font-size: 24px;
+      margin-bottom: 4px
+    }
+
+    .doc-cred {
+      font-size: 13px;
+      color: var(--mute);
+      margin-bottom: 14px;
+      font-style: italic;
+      font-family: Newsreader, serif
+    }
+
+    .doc-body p {
+      font-size: 14px;
+      color: var(--mute);
+      margin-bottom: 20px;
+      flex: 1
+    }
+
+    .doc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line)
+    }
+
+    .doc-tags span {
+      font-size: 12px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 3px 10px;
+      color: var(--ink)
+    }
+
+    .roster {
+      border-top: 1px solid var(--line)
+    }
+
+    .roster-item {
+      display: grid;
+      grid-template-columns: 72px 1.2fr 1fr 1.5fr;
+      gap: 24px;
+      align-items: center;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .roster-av {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--sage-l)
+    }
+
+    .roster-name {
+      font-family: Newsreader, serif;
+      font-size: 21px;
+      color: var(--ink)
+    }
+
+    .roster-role {
+      font-size: 13px;
+      color: var(--sage);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 500
+    }
+
+    .roster-desc {
+      font-size: 14px;
+      color: var(--mute)
+    }
+
+    /* ---- BOOKING & OTHER PAGES ---- */
     .book {
       display: grid;
       grid-template-columns: 340px 1fr;
@@ -744,6 +947,33 @@
       .fg {
         grid-template-columns: 1fr 1fr
       }
+
+      .lead-doc {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 24px
+      }
+
+      .doc-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px
+      }
+
+      .sec-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px
+      }
+
+      .roster-item {
+        grid-template-columns: 64px 1fr;
+        gap: 12px 18px
+      }
+
+      .roster-role,
+      .roster-desc {
+        grid-column: 2
+      }
     }
 
     .links a.btn {
@@ -836,6 +1066,12 @@
 
       .row .tx {
         padding: 44px 36px
+      }
+
+      .lead-doc {
+        grid-template-columns: 320px 1fr;
+        gap: 40px;
+        padding: 40px
       }
 
       .fg {
@@ -935,7 +1171,8 @@
         text-align: center
       }
 
-      .cats {
+      .cats,
+      .doc-grid {
         grid-template-columns: 1fr
       }
 
@@ -958,6 +1195,14 @@
 
       .row .tx {
         padding: 30px 20px
+      }
+
+      .lead-doc {
+        padding: 24px 20px
+      }
+
+      .lead-quote {
+        font-size: 20px
       }
 
       .cal,
@@ -1093,8 +1338,8 @@
         </a>
         <button class="burger" aria-label="Menu" id="bg">≡</button>
         <div class="links" id="lk">
-          <a href="#/">Utama</a><a href="#/rawatan">Rawatan</a><a href="#/hubungi">Lokasi</a><a href="#/tempahan"
-            class="btn dk">Tempah Temu Janji</a>
+          <a href="#/">Utama</a><a href="#/rawatan">Rawatan</a><a href="#/staf">Staf</a><a href="#/hubungi">Lokasi</a><a
+            href="#/tempahan" class="btn dk">Tempah Temu Janji</a>
         </div>
       </nav>
     </div>
@@ -1260,6 +1505,214 @@
       </div>
     </div>
 
+    <!-- STAF / PASUKAN KAMI -->
+    <div class="page" id="p-staf">
+      <section class="full" data-bg="1579684385127-1ef15d508118">
+        <div class="wrap">
+          <h1>Pakar &amp; Pasukan Klinikal</h1>
+          <p>Gabungan doktor pergigian bertauliah, pakar estetik dan jururawat terlatih yang mengutamakan ketelitian
+            serta keselesaan anda di Avenue K.</p>
+        </div>
+      </section>
+
+      <!-- Sorotan Pengarah Klinikal -->
+      <section class="sec">
+        <div class="wrap">
+          <div class="lead-doc">
+            <img class="im" data-src="1559839734-2b71ea197ec2" alt="Dr. Amina Zahra - Ketua Pegawai Klinikal">
+            <div>
+              <span class="kicker">Pengarah Klinikal &amp; Doktor Prinsipal</span>
+              <h2>Dr. Amina Zahra</h2>
+              <p style="color:var(--mute);margin-top:6px;font-size:14px">BDS (Malaya), MClinDent Prosthodontics (London) · MDC #6412</p>
+              <blockquote class="lead-quote">
+                “Setiap pelan rawatan direka secara khusus—kami tidak sekadar merawat gigi, tetapi membina semula
+                keyakinan senyuman secara semula jadi dan bebas rasa cemas.”
+              </blockquote>
+              <p style="color:var(--mute)">Berpengalaman lebih 14 tahun dalam pemulihan mulut penuh, reka bentuk
+                senyuman digital (Digital Smile Design) dan implan estetik di Kuala Lumpur serta United Kingdom.</p>
+              <div class="doc-meta">
+                <div><strong>Fokus Utama</strong>Veneer Porselin, Implan &amp; Prostodontik</div>
+                <div><strong>Bahasa</strong>Melayu, Inggeris, Mandarin Asas</div>
+                <div><strong>Jadual Klinik</strong>Isnin – Jumaat (10 PG – 7 MLM)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Grid Doktor & Pakar Residensi -->
+      <section class="sec" style="padding-top:10px">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="kicker">Barisan Doktor Gigi</span>
+              <h2>Doktor &amp; Pakar Residensi</h2>
+            </div>
+          </div>
+
+          <div class="doc-grid">
+            <article class="doc-card">
+              <div class="doc-photo">
+                <img class="im" data-src="1622253692010-333f2da6031d" alt="Dr. Ian Tan Wei Ming">
+                <span class="doc-badge">MDC #7820</span>
+              </div>
+              <div class="doc-body">
+                <div class="doc-role">Ortodontik &amp; Penyusunan Gigi</div>
+                <h3>Dr. Ian Tan Wei Ming</h3>
+                <div class="doc-cred">DDS (UKM), MOrth RCS (Edinburgh)</div>
+                <p>Penyedia bertauliah Invisalign Platinum yang memfokuskan pembetulan gigitan dewasa dan remaja tanpa
+                  cabutan gigi yang tidak perlu.</p>
+                <div class="doc-tags">
+                  <span>Invisalign</span>
+                  <span>Damon Braces</span>
+                  <span>Retainer</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="doc-card">
+              <div class="doc-photo">
+                <img class="im" data-src="1594824476967-48c8b964273f" alt="Dr. Sophia Elena">
+                <span class="doc-badge">MDC #8194</span>
+              </div>
+              <div class="doc-body">
+                <div class="doc-role">Pergigian Kosmetik &amp; Restoratif</div>
+                <h3>Dr. Sophia Elena</h3>
+                <div class="doc-cred">BDS (Otago, New Zealand)</div>
+                <p>Terkenal dengan sentuhan lembut dan ketelitian mikroskopik untuk tampalan estetik sepadan warna gigi
+                  serta pemutihan profesional.</p>
+                <div class="doc-tags">
+                  <span>Composite Veneer</span>
+                  <span>Whitening</span>
+                  <span>Inlay / Onlay</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="doc-card">
+              <div class="doc-photo">
+                <img class="im" data-src="1537368910025-700350fe46c7" alt="Dr. Harith Iskandar">
+                <span class="doc-badge">MDC #7305</span>
+              </div>
+              <div class="doc-body">
+                <div class="doc-role">Pembedahan Mulut &amp; Endodontik</div>
+                <h3>Dr. Harith Zulkifli</h3>
+                <div class="doc-cred">BDS (Alexandria), MFDS RCS (England)</div>
+                <p>Mengendalikan pembedahan gigi bongsu terimpak, implan berpandukan komputer 3D dan rawatan akar
+                  menggunakan mikroskop endodontik.</p>
+                <div class="doc-tags">
+                  <span>Implan 3D</span>
+                  <span>Root Canal</span>
+                  <span>Gigi Bongsu</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="doc-card">
+              <div class="doc-photo">
+                <img class="im" data-src="1651008376811-b90baee60c1f" alt="Dr. Hannah Lim">
+                <span class="doc-badge">MDC #8912</span>
+              </div>
+              <div class="doc-body">
+                <div class="doc-role">Pergigian Kanak-Kanak &amp; Keluarga</div>
+                <h3>Dr. Hannah Lim</h3>
+                <div class="doc-cred">BDS (IMU), Dip. Pediatric Dentistry</div>
+                <p>Membantu kanak-kanak membina tabiat penjagaan gigi positif melalui pendekatan mesra tanpa trauma dari
+                  lawatan pertama.</p>
+                <div class="doc-tags">
+                  <span>Pediatrik</span>
+                  <span>Pencegahan</span>
+                  <span>Fluorida</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="doc-card">
+              <div class="doc-photo">
+                <img class="im" data-src="1612349317150-e413f6a5b16d" alt="Dr. Arvind Raj">
+                <span class="doc-badge">MDC #7641</span>
+              </div>
+              <div class="doc-body">
+                <div class="doc-role">Prostodontik &amp; Terapi Tidur</div>
+                <h3>Dr. Arvind Raj</h3>
+                <div class="doc-cred">BDS (Manipal), Cert. Oral Appliance Therapy</div>
+                <p>Pakar dalam pembuatan sarung gigi zirkonia, gigi palsu fleksibel serta alat oral khas bagi masalah
+                  dengkur dan sleep apnea.</p>
+                <div class="doc-tags">
+                  <span>Crown &amp; Bridge</span>
+                  <span>Sleep Apnea</span>
+                  <span>Night Guard</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="doc-card">
+              <div class="doc-photo">
+                <img class="im" data-src="1582750433449-648ed127bb54" alt="Dr. Faris Danial">
+                <span class="doc-badge">MDC #9043</span>
+              </div>
+              <div class="doc-body">
+                <div class="doc-role">Pergigian Am &amp; Periodontik</div>
+                <h3>Dr. Faris Danial</h3>
+                <div class="doc-cred">DDS (USM)</div>
+                <p>Menumpukan kepada kesihatan gusi jangka panjang, rawatan scaling ultrasonik bebas ngilu dan
+                  pemeriksaan menyeluruh selepas waktu pejabat.</p>
+                <div class="doc-tags">
+                  <span>Rawatan Gusi</span>
+                  <span>Scaling</span>
+                  <span>X-Ray Digital</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Direktori Staf Sokongan & Pengurusan -->
+      <section class="sec" style="background:var(--sand)">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="kicker">Sokongan Klinikal &amp; Concierge</span>
+              <h2>Pasukan Pengurusan &amp; Jururawat</h2>
+            </div>
+          </div>
+
+          <div class="roster">
+            <div class="roster-item">
+              <img class="roster-av" data-src="1527613426441-4da17471b66d" alt="Nurul Izzah">
+              <div class="roster-name">Nurul Izzah, RDN</div>
+              <div class="roster-role">Ketua Jururawat Pergigian</div>
+              <div class="roster-desc">Mengetuai protokol kawalan infeksi, pensterilan autoklaf Kelas-B dan bantuan
+                pembedahan implan selama 9 tahun.</div>
+            </div>
+            <div class="roster-item">
+              <img class="roster-av" data-src="1573496359142-b8d87734a5a2" alt="Carmen Yap">
+              <div class="roster-name">Carmen Yap</div>
+              <div class="roster-role">Pengurus Cawangan Avenue K</div>
+              <div class="roster-desc">Menguruskan pengalaman pesakit, pelan pembayaran ansuran 0% serta pengesahan
+                panel korporat &amp; MediExpress.</div>
+            </div>
+            <div class="roster-item">
+              <img class="roster-av" data-src="1580489944761-15a19d654956" alt="Siti Hajar">
+              <div class="roster-name">Siti Hajar</div>
+              <div class="roster-role">Koordinator Ortodontik &amp; Implan</div>
+              <div class="roster-desc">Memastikan jadual susulan Invisalign, imbasan 3D iTero dan penjagaan pasca
+                rawatan anda berjalan lancar melalui WhatsApp.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shade cta" data-bg="1629909613654-28e377c37b09">
+        <div class="wrap">
+          <h2>Bincang pelan rawatan bersama doktor kami.</h2>
+          <p>Pilih slot masa anda. Kami akan memadankan doktor yang paling sesuai mengikut keperluan rawatan anda.</p>
+          <a class="btn lt" href="#/tempahan">Tempah Temu Janji</a>
+        </div>
+      </section>
+    </div>
+
     <!-- TEMPAHAN -->
     <div class="page" id="p-tempahan">
       <section class="full" data-bg="1606811841689-23dfddce3e95" style="padding-bottom:60px">
@@ -1350,8 +1803,8 @@
           <p>Lot L1-1C, Level 1, Avenue K Shopping Mall, 156 Jalan Ampang, 50450 Kuala Lumpur</p>
         </div>
         <div>
-          <h4>Laman</h4><a href="#/">Utama</a><a href="#/rawatan">Rawatan</a><a href="#/tempahan">Tempahan</a><a
-            href="#/hubungi">Lokasi</a>
+          <h4>Laman</h4><a href="#/">Utama</a><a href="#/rawatan">Rawatan</a><a href="#/staf">Staf</a><a
+            href="#/tempahan">Tempahan</a><a href="#/hubungi">Lokasi</a>
         </div>
         <div>
           <h4>Hubungi</h4><a href="https://wa.me/601111916315">011-1191 6315</a><a
@@ -1374,11 +1827,11 @@
 
     function route() {
       const h = (location.hash.replace('#/', '') || '');
-      const k = ['rawatan', 'tempahan', 'hubungi'].includes(h) ? h : '';
+      const k = ['rawatan', 'staf', 'tempahan', 'hubungi'].includes(h) ? h : '';
       document.querySelectorAll('.page').forEach(p => p.classList.toggle('show', p.id === 'p-' + k));
       document.querySelectorAll('.links a:not(.btn)').forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#/' + k));
       $('#lk').classList.remove('open'); window.scrollTo(0, 0);
-      document.title = ({ '': 'Signature PrimeCare Dental Clinic', rawatan: 'Rawatan', tempahan: 'Tempah Temu Janji', hubungi: 'Lokasi dan Hubungi' })[k] + ' – PrimeCare Avenue K';
+      document.title = ({ '': 'Signature PrimeCare Dental Clinic', rawatan: 'Rawatan', staf: 'Pakar & Staf', tempahan: 'Tempah Temu Janji', hubungi: 'Lokasi dan Hubungi' })[k] + ' – PrimeCare Avenue K';
     }
     addEventListener('hashchange', route); route();
     $('#bg').onclick = () => $('#lk').classList.toggle('open');
