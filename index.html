@@ -134,16 +134,25 @@
       color: var(--ink)
     }
 
+    /* Kemaskini butang: sentiasa berpusat (vertical & horizontal center) */
     .btn {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: var(--sage);
       color: #fff !important;
-      padding: 13px 24px;
+      padding: 0 24px;
+      min-height: 44px;
+      height: 44px;
       border: 0;
       border-radius: 2px;
-      font: 500 14px Inter;
+      font: 500 14px Inter, system-ui, sans-serif;
       text-decoration: none;
-      cursor: pointer
+      cursor: pointer;
+      white-space: nowrap;
+      line-height: 1;
+      box-sizing: border-box;
+      transition: background .2s ease
     }
 
     .btn:hover {
@@ -152,6 +161,10 @@
 
     .btn.dk {
       background: var(--dark)
+    }
+
+    .btn.dk:hover {
+      background: #232720
     }
 
     .btn.lt {
@@ -434,7 +447,7 @@
       border: 0
     }
 
-    /* ---- STAFF PAGE STYLES (EDITORIAL LAYOUT) ---- */
+    /* ---- STAFF PAGE STYLES ---- */
     .kicker {
       font: 500 11px Inter, sans-serif;
       letter-spacing: .16em;
@@ -446,32 +459,33 @@
 
     .lead-doc {
       display: grid;
-      grid-template-columns: 400px 1fr;
-      gap: 64px;
+      grid-template-columns: minmax(280px, 380px) 1fr;
+      gap: clamp(28px, 4vw, 56px);
       align-items: center;
       background: var(--sand);
-      padding: 52px;
+      padding: clamp(24px, 4.5vw, 52px);
       border: 1px solid var(--line)
     }
 
     .lead-doc .im {
       aspect-ratio: 4/5;
-      object-position: top center
+      object-position: top center;
+      border-radius: 2px
     }
 
     .lead-quote {
-      font: italic 24px/1.4 Newsreader, Georgia, serif;
+      font: italic clamp(18px, 2.2vw, 24px)/1.4 Newsreader, Georgia, serif;
       color: var(--ink);
-      margin: 22px 0;
-      padding-left: 20px;
+      margin: 20px 0;
+      padding-left: 18px;
       border-left: 2px solid var(--sage)
     }
 
     .doc-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
       padding-top: 22px;
       border-top: 1px solid var(--line);
       font-size: 13.5px;
@@ -489,13 +503,13 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-bottom: 42px;
-      padding-bottom: 20px;
+      margin-bottom: 38px;
+      padding-bottom: 18px;
       border-bottom: 1px solid var(--line)
     }
 
     .sec-head p {
-      max-width: 420px;
+      max-width: 440px;
       color: var(--mute);
       font-size: 14.5px
     }
@@ -503,7 +517,7 @@
     .doc-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px
+      gap: 28px
     }
 
     .doc-card {
@@ -511,6 +525,7 @@
       border: 1px solid var(--line);
       display: flex;
       flex-direction: column;
+      height: 100%;
       transition: transform .25s ease, box-shadow .25s ease
     }
 
@@ -523,11 +538,13 @@
       position: relative;
       overflow: hidden;
       aspect-ratio: 4/5;
-      background: var(--sage-l)
+      background: var(--sage-l);
+      width: 100%
     }
 
     .doc-photo .im {
       height: 100%;
+      width: 100%;
       object-position: top center
     }
 
@@ -541,11 +558,12 @@
       font-size: 11px;
       letter-spacing: .08em;
       text-transform: uppercase;
-      color: var(--ink)
+      color: var(--ink);
+      border-radius: 1px
     }
 
     .doc-body {
-      padding: 26px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       flex: 1
@@ -561,8 +579,9 @@
     }
 
     .doc-body h3 {
-      font-size: 24px;
-      margin-bottom: 4px
+      font-size: 23px;
+      margin-bottom: 4px;
+      line-height: 1.2
     }
 
     .doc-cred {
@@ -593,7 +612,8 @@
       background: var(--bg);
       border: 1px solid var(--line);
       padding: 3px 10px;
-      color: var(--ink)
+      color: var(--ink);
+      border-radius: 1px
     }
 
     .roster {
@@ -620,7 +640,8 @@
     .roster-name {
       font-family: Newsreader, serif;
       font-size: 21px;
-      color: var(--ink)
+      color: var(--ink);
+      line-height: 1.2
     }
 
     .roster-role {
@@ -633,7 +654,8 @@
 
     .roster-desc {
       font-size: 14px;
-      color: var(--mute)
+      color: var(--mute);
+      line-height: 1.5
     }
 
     /* ---- BOOKING & OTHER PAGES ---- */
@@ -857,6 +879,82 @@
       outline-offset: 2px
     }
 
+    /* ---- RESPONSIVE MEDIA QUERIES ---- */
+
+    /* large screens */
+    @media(min-width:1600px) {
+      .wrap {
+        max-width: 1280px
+      }
+
+      body {
+        font-size: 16px
+      }
+
+      .contact .info {
+        padding-left: max(28px, calc((100vw - 1280px)/2 + 28px))
+      }
+    }
+
+    /* laptop / tablet landscape */
+    @media(max-width:1100px) {
+      .cats {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .cat {
+        min-height: 300px
+      }
+
+      .cat:nth-child(n+4) {
+        grid-column: span 1
+      }
+
+      .row .tx {
+        padding: 44px 36px
+      }
+
+      .lead-doc {
+        grid-template-columns: 300px 1fr;
+        gap: 36px;
+        padding: 36px
+      }
+
+      .doc-grid {
+        gap: 22px
+      }
+
+      .roster-item {
+        grid-template-columns: 64px 1.1fr 1fr 1.3fr;
+        gap: 18px
+      }
+
+      .fg {
+        grid-template-columns: 1fr 1fr 1fr
+      }
+
+      .fg>div:first-child {
+        grid-column: 1/-1
+      }
+
+      .contact .info {
+        padding-right: 32px
+      }
+    }
+
+    /* small laptop / intermediate tablet */
+    @media(max-width:980px) {
+      .doc-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px
+      }
+
+      .links {
+        gap: 16px
+      }
+    }
+
+    /* tablet portrait */
     @media(max-width:860px) {
       .links {
         position: absolute;
@@ -878,6 +976,16 @@
 
       .burger {
         display: block
+      }
+
+      .links a:not(.btn) {
+        padding: 6px 0;
+        width: 100%
+      }
+
+      .links a.btn {
+        width: 100%;
+        margin-top: 6px
       }
 
       .intro,
@@ -928,7 +1036,8 @@
 
       .book {
         grid-template-columns: 1fr;
-        margin-inline: 16px
+        margin-inline: 16px;
+        margin-top: -40px
       }
 
       .cal {
@@ -944,159 +1053,6 @@
         min-height: 380px
       }
 
-      .fg {
-        grid-template-columns: 1fr 1fr
-      }
-
-      .lead-doc {
-        grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 32px 24px
-      }
-
-      .doc-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px
-      }
-
-      .sec-head {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px
-      }
-
-      .roster-item {
-        grid-template-columns: 64px 1fr;
-        gap: 12px 18px
-      }
-
-      .roster-role,
-      .roster-desc {
-        grid-column: 2
-      }
-    }
-
-    .links a.btn {
-      padding: 12px 24px;
-      line-height: 1.2;
-      white-space: nowrap;
-      border-radius: 2px;
-      color: #fff;
-      text-align: center
-    }
-
-    @media(max-width:860px) {
-      .links a.btn {
-        width: auto;
-        margin-top: 4px
-      }
-    }
-
-    /* ---- responsive hardening ---- */
-    html {
-      -webkit-text-size-adjust: 100%
-    }
-
-    body {
-      overflow-x: hidden
-    }
-
-    img,
-    iframe {
-      max-width: 100%
-    }
-
-    .wrap {
-      padding-left: max(28px, env(safe-area-inset-left));
-      padding-right: max(28px, env(safe-area-inset-right))
-    }
-
-    .burger {
-      min-width: 44px;
-      min-height: 44px
-    }
-
-    select,
-    input {
-      font-size: 16px;
-      min-height: 44px
-    }
-
-    .times button,
-    .btn {
-      min-height: 44px
-    }
-
-    .links a {
-      padding: 4px 0
-    }
-
-    dd {
-      overflow-wrap: anywhere
-    }
-
-    /* large screens */
-    @media(min-width:1600px) {
-      .wrap {
-        max-width: 1280px
-      }
-
-      body {
-        font-size: 16px
-      }
-
-      .contact .info {
-        padding-left: max(28px, calc((100vw - 1280px)/2 + 28px))
-      }
-    }
-
-    /* laptop / tablet landscape */
-    @media(max-width:1100px) {
-      .cats {
-        grid-template-columns: repeat(3, 1fr)
-      }
-
-      .cat {
-        min-height: 300px
-      }
-
-      .cat:nth-child(n+4) {
-        grid-column: span 1
-      }
-
-      .row .tx {
-        padding: 44px 36px
-      }
-
-      .lead-doc {
-        grid-template-columns: 320px 1fr;
-        gap: 40px;
-        padding: 40px
-      }
-
-      .fg {
-        grid-template-columns: 1fr 1fr 1fr
-      }
-
-      .fg>div:first-child {
-        grid-column: 1/-1
-      }
-
-      .contact .info {
-        padding-right: 32px
-      }
-    }
-
-    /* tablet portrait */
-    @media(max-width:860px) {
-      .cats {
-        grid-template-columns: 1fr 1fr
-      }
-
-      .cat:last-child {
-        grid-column: 1/-1
-      }
-
       .pay {
         gap: 0
       }
@@ -1109,29 +1065,78 @@
         padding: 60px 0
       }
 
-      .book {
-        margin-top: -40px
-      }
-
       .full .wrap {
         padding-bottom: 56px
+      }
+
+      .fg {
+        grid-template-columns: 1fr 1fr
       }
 
       .fg>div:first-child {
         grid-column: 1/-1
       }
 
-      .links a {
-        padding: 6px 0;
-        width: 100%
+      /* staf page tablet */
+      .lead-doc {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 36px 28px
       }
 
-      .links a.btn {
-        width: auto
+      .lead-doc .im {
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+        aspect-ratio: 4/5
+      }
+
+      .sec-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 30px
+      }
+
+      .roster-item {
+        grid-template-columns: 58px 1fr;
+        gap: 6px 16px;
+        align-items: start;
+        padding: 20px 0
+      }
+
+      .roster-av {
+        width: 58px;
+        height: 58px;
+        grid-row: 1 / 3
+      }
+
+      .roster-name {
+        grid-column: 2
+      }
+
+      .roster-role {
+        grid-column: 2
+      }
+
+      .roster-desc {
+        grid-column: 1 / -1;
+        margin-top: 6px
       }
     }
 
     /* phones */
+    @media(max-width:640px) {
+      .doc-grid {
+        grid-template-columns: 1fr;
+        gap: 22px
+      }
+
+      .doc-photo {
+        aspect-ratio: 16/11
+      }
+    }
+
     @media(max-width:600px) {
       :root {
         --hh: 60px
@@ -1167,12 +1172,10 @@
       }
 
       .full .btn {
-        width: 100%;
-        text-align: center
+        width: 100%
       }
 
-      .cats,
-      .doc-grid {
+      .cats {
         grid-template-columns: 1fr
       }
 
@@ -1195,14 +1198,6 @@
 
       .row .tx {
         padding: 30px 20px
-      }
-
-      .lead-doc {
-        padding: 24px 20px
-      }
-
-      .lead-quote {
-        font-size: 20px
       }
 
       .cal,
@@ -1242,8 +1237,7 @@
       }
 
       .contact .btn {
-        display: block;
-        text-align: center
+        width: 100%
       }
 
       .contact .ul {
@@ -1265,8 +1259,40 @@
       }
 
       .cta .btn {
-        width: 100%;
-        text-align: center
+        width: 100%
+      }
+
+      /* staf page mobile adjustments */
+      .lead-doc {
+        padding: 24px 18px;
+        gap: 20px
+      }
+
+      .lead-doc .im {
+        max-width: 240px;
+        aspect-ratio: 1/1
+      }
+
+      .lead-quote {
+        font-size: 18px;
+        line-height: 1.45;
+        margin: 14px 0;
+        padding-left: 14px
+      }
+
+      .doc-meta {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 18px;
+        padding-top: 16px
+      }
+
+      .doc-body {
+        padding: 20px 18px
+      }
+
+      .doc-body h3 {
+        font-size: 21px
       }
     }
 
@@ -1284,9 +1310,62 @@
       .form {
         padding: 16px
       }
+
+      .lead-doc {
+        padding: 18px 14px;
+        gap: 16px
+      }
+
+      .lead-doc .im {
+        max-width: 190px
+      }
+
+      .lead-quote {
+        font-size: 16px;
+        padding-left: 10px
+      }
+
+      .doc-body {
+        padding: 16px 14px
+      }
+
+      .doc-body h3 {
+        font-size: 19px
+      }
+
+      .doc-cred {
+        font-size: 12px
+      }
+
+      .doc-tags span {
+        font-size: 11px;
+        padding: 2px 8px
+      }
+
+      .roster-item {
+        grid-template-columns: 48px 1fr;
+        gap: 4px 12px
+      }
+
+      .roster-av {
+        width: 48px;
+        height: 48px
+      }
+
+      .roster-name {
+        font-size: 18px
+      }
+
+      .roster-role {
+        font-size: 12px
+      }
+
+      .roster-desc {
+        font-size: 13px
+      }
     }
 
-    /* landscape phones / short screens: keep hero readable */
+    /* landscape phones / short screens */
     @media(max-height:480px) and (orientation:landscape) {
       .full {
         min-height: calc(100vh - var(--hh));
@@ -1305,6 +1384,49 @@
       .full p {
         margin: 10px 0 16px
       }
+    }
+
+    /* responsive hardening */
+    html {
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      overflow-x: hidden
+    }
+
+    img,
+    iframe {
+      max-width: 100%
+    }
+
+    .wrap {
+      padding-left: max(28px, env(safe-area-inset-left));
+      padding-right: max(28px, env(safe-area-inset-right))
+    }
+
+    .burger {
+      min-width: 44px;
+      min-height: 44px
+    }
+
+    select,
+    input {
+      font-size: 16px;
+      min-height: 44px
+    }
+
+    .times button {
+      min-height: 44px
+    }
+
+    /* Pembetulan: elak override padding butang .btn */
+    .links a:not(.btn) {
+      padding: 4px 0
+    }
+
+    dd {
+      overflow-wrap: anywhere
     }
 
     @media(hover:none) {
@@ -1548,6 +1670,7 @@
               <span class="kicker">Barisan Doktor Gigi</span>
               <h2>Doktor &amp; Pakar Residensi</h2>
             </div>
+            <p>Latihan lanjutan mengikut sub-bidang masing-masing.</p>
           </div>
 
           <div class="doc-grid">
